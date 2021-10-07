@@ -1,5 +1,8 @@
 
 
+from typing import Callable
+
+
 def sort_by_last_letter(strings):
     def last_letter(s):
         return s[-1]
@@ -7,7 +10,7 @@ def sort_by_last_letter(strings):
 
 
 def raise_to(exp: int):
-    def raise_exp(base: int):
+    def raise_exp(base: int) -> Callable[[int], int]:
         return pow(base, exp)
     return raise_exp
 
