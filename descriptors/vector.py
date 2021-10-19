@@ -1,4 +1,4 @@
-from typing import Any, Dict, Mapping
+from typing import Any, Dict
 
 
 class Vector:

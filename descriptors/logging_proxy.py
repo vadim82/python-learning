@@ -1,5 +1,4 @@
 from typing import Any
-import vector
 
 
 class LoggingProxy:
@@ -30,7 +29,9 @@ class LoggingProxy:
 
 
 if __name__ == "__main__":
-    c = vector.ColoredVector(red=10, green=20, blue=30, x=1, y=5)
+    from vector import ColoredVector
+
+    c = ColoredVector(red=10, green=20, blue=30, x=1, y=5)
     proxy = LoggingProxy(c)
 
     proxy.red
