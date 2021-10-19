@@ -6,7 +6,7 @@ class Planet:
     def __init__(
         self,
         name,
-        radius_metres,
+        radius_metres: int,
         mass_kilograms,
         orbital_period_seconds,
         surface_temperature_kelvin
@@ -15,10 +15,13 @@ class Planet:
         # the code below.. is proxied by the Positive descriptor
         # this means it called the __set__ method of the positive descriptor like this
         # Positive.__set__(Planet.__dict__["radius_metres"], self, radius_metres)
+        # This is because __setattribute__ is what = does.. and Descriptors take precendence
+        # over setting stuff on the instance.
         self.radius_metres = radius_metres
         self.mass_kilograms = mass_kilograms
         self.orbital_period = orbital_period_seconds
         self.surface_temperature = surface_temperature_kelvin
+        self.test = 1
 
     @property
     def name(self):
@@ -37,3 +40,5 @@ class Planet:
     mass_kilograms = Positive()
     orbital_period = Positive()
     surface_temperature = Positive()
+
+    test = 44
