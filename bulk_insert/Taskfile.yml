@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  db-up:
+    cmds:
+      - docker compose -f docker/dependencies.yml up -d
+  db-down:
+    cmds:
+      - docker compose -f ./docker/dependencies.yml down --rmi all
